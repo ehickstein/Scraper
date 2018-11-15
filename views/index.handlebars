@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1>NYT Scraper</h1>
+        <h2>Read the front page of the New York Times, and add comments to start discussion!</h2>
+        <a href="/scrape"><button type="button" class="btn btn-danger scrapeButton">Scrape for Articles</button></a>
+    </div>
+    <div class="article-container">
+
+        {{#each Article}}
+        <div class="row">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h2>{{this.title}}</h2>
+                </div>
+                <div class="panel-body">
+                    <p>{{this.summary}}</p>
+                    <a href="/articles/{{this._id}}"><button type="button" class="btn btn-warning save-article">See Comments</button></a>
+                    <a href="https://www.nytimes.com{{this.link}}"><button type="button" class="btn btn-primary article-link">Link</button></a>
+                </div>
+            </div>
+            <br>
+        </div>
+        {{/each}}
+    </div>
+
+    <footer class="footer container">
+        <p>Eric Hickstein - 2018</p>
+        <br>
+        <a href="https://github.com/ehickstein/Scraper">Github Repository</a>
+    </footer>
+</div>
